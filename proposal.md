@@ -1,27 +1,29 @@
 # General description of project
-> E.g. Building an inventory tracking system for my CCA
+> Building a casino game where people can bet tokens to play blackjack against an algorithm and their inventory of tokens is kept track of.
 
 #Goals of project
-> E.g. Streamline tracking and cataloguing of inventory to facilitate member loans, repairs & Semester stock-taking needs
+> Account creation and login system, database to store number of tokens for each account, incoperate token system into existing blackjack algorithm
 
 # Listing of features
-> List all the features in the fully functional app - you may choose to work on a subset of this listing to produce a MVP (minimum viable product) given constraint of time
+> Main menu (choose gamemode, check balance)
+> Blackjack game (place bet, hit, stand)
+> Ideally other games will also be here (poker, roulette, slot machine) but not enough time. Maybe slot machine can be implemented.
 
 # External Scanning
-> Are there similar apps / codebase that you found online that is similar to your project?  Provide link(s) to these projects and outline how will your project be different?
+> [OOP-based blackjack program](https://github.com/sheetalbongale/Blackjack-Python/blob/master/blackjack.py)
 
 # Listing of Key Use Cases
-> Yearly, CCA senior will do stock-take and will need to generate a report on the existing stock.
-> Start of school break, members will loan equipment and will need to return when school break ends.
+> Entertainment purposes, online program that can be run by anyone.
 
 # Skills that my project requires me to pick up
-> List out the skills that you are not familiar with that is necessary due to the project scope.
+> Database creation
+> Storage of data in database
 
 # [Development Log](/devlog.md)
 > You will be updating this section regularly
-> - Week 5
-> - Week 6
-> - Week 7
-> - Week 8
-> - Week 9
-> - Week 10
+> - Proposal
+> - Try to implement the token system into the existing blackjack code
+> - Try to set up account creation interface
+> - (TBD) Database stuff
+> - (TBD) Database stuff
+> - Buffer (Maybe for slot machine)

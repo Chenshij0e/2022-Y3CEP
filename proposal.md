@@ -5,9 +5,9 @@
 > Account creation and login system, database to store number of tokens for each account, incoperate token system into existing blackjack algorithm
 
 # Listing of features
-> Main menu (choose gamemode, check balance) /n
-> Blackjack game (place bet, hit, stand) /n
-> Ideally other games will also be here (poker, roulette, slot machine) but not enough time. Maybe slot machine can be implemented.
+> Main menu (choose gamemode, check balance)
+Blackjack game (place bet, hit, stand)
+Ideally other games will also be here (poker, roulette, slot machine) but not enough time. Maybe slot machine can be implemented.
 
 # External Scanning
 > [OOP-based blackjack program](https://github.com/sheetalbongale/Blackjack-Python/blob/master/blackjack.py)

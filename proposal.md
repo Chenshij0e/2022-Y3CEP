@@ -5,8 +5,8 @@
 > Account creation and login system, database to store number of tokens for each account, incoperate token system into existing blackjack algorithm
 
 # Listing of features
-> Main menu (choose gamemode, check balance)
-> Blackjack game (place bet, hit, stand)
+> Main menu (choose gamemode, check balance) /n
+> Blackjack game (place bet, hit, stand) /n
 > Ideally other games will also be here (poker, roulette, slot machine) but not enough time. Maybe slot machine can be implemented.
 
 # External Scanning

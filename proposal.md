@@ -21,9 +21,9 @@
 
 # [Development Log](/devlog.md)
 > You will be updating this section regularly
-> - Proposal
-> - Try to implement the token system into the existing blackjack code
-> - Try to set up account creation interface
-> - (TBD) Database stuff
-> - (TBD) Database stuff
-> - Buffer (Maybe for slot machine)
+> - Wk 5: Proposal
+> - Wk 6: Try to implement the token system into the existing blackjack code
+> - Wk 7: Try to set up account creation interface
+> - Wk 8: (TBD) Database stuff
+> - Wk 9: (TBD) Database stuff
+> - Wk 10: Buffer (Maybe for slot machine)

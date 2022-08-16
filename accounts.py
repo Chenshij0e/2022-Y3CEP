@@ -65,3 +65,4 @@ def signup_or_login():
         login()
     elif choice == 'b' and acc.get_username() == '' and acc.get_password() == '':
         
+#read write passwords from csv file

@@ -14,12 +14,12 @@
 ## Week 6 (2 Aug - 8 Aug)
 > Try to implement the token system into the existing blackjack code (COMPLETE)
 ## Week 7 (9 Aug - 15 Aug)
-> Try to set up account creation interface (INCOMPLETE)
+> Try to set up account creation interface (INCOMPLETE, COMPLETED WEEK 8)
 ## Week 8 (16 Aug - 22 Aug)
-> Try to save created accounts into a database
+> Try to save created accounts into a database (COMPLETED WEEK 9)
 ## Week 9 (23 Aug - 29 Aug)
-> Try to save created accounts into a database
+> Try to save created accounts into a database (COMPLETE)
 ## Week 10 (30 Aug - 5 Sep)
 > Try to have an individual balance for each account
 ## Sep Holiday (5 Sep - 10 Sep) **Submission date is 10 Sep**
-> Try to have an individual balance for each account
+> Documentation

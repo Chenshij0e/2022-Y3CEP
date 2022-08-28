@@ -1,26 +1,19 @@
+from inventory import *
+import csv
+from mainmenu import *
+
 class Account:
 
-    def __init__(self):
-        self.username = ''
-        self.password = ''
+    def __init__(self, user, password):
+        self.username = user
+        self.password = password
+        self.balance = Inventory(500)
 
     def add_username(self, user):
         self.username = user
 
-    def check_username(self, user_input):
-        if self.username.lower() == user_input.lower():
-            return True
-        else:
-            return False
-
     def add_password(self, password):
         self.password = password
-
-    def check_password(self, password_input):
-        if self.password == password_input:
-            return True
-        else:
-            return False
 
     def get_username(self):
         return self.username
@@ -28,41 +21,68 @@ class Account:
     def get_password(self):
         return self.password
 
+    def get_balance(self):
+        return self.balance.check_value()
+
+    def get_balanceobj(self):
+        return self.balance
+
     def __str__(self):
         return self.username
 
-acc = Account()
 def signup():
     user = input("Username: ")
+    while len(user) < 3 or len(user) > 20 or user.replace('_', '').isalnum() == False:
+        user = input("Please choose a username that is 3 to 20 characters long,\nwith alphanumeric characters and underscores only:\n")
+    with open("database.txt") as database:
+        database_csv = csv.reader(database, delimiter=',')
+        for line in database_csv:
+            while user.lower() == line[0].lower():
+                user = input("That username is already taken! Please try again:\n")
     password = input("Password: ")
-    while len(user) < 3 or len(user) > 20:
-        user = input("Please choose a username between 3 and 20 characters long:\n")
-        password = input("Password: ")
-    if len(user) >= 3 and len(user) <= 20:
-        acc.add_username(user)
-        acc.add_password(password)
+    while len(password) < 6:
+        password = input("Please choose a password that is at least 6 characters long:\n")
+    global acc
+    acc = Account(user, password)
+    with open("database.txt", mode='a') as database:
+        database.write(f"{acc.get_username()},{acc.get_password()},{acc.get_balance()}\n")
 
 
 def login():
     user_input = input("Username: ")
     password_input = input("Password: ")
-    while acc.check_username(user_input) == False or acc.check_password(password_input) == False:
-        user_input = input("Invalid username or password, pls try again.\nUsername: ")
-        password_input = input("Password: ")
-    if acc.check_username(user_input) == True and acc.check_password(password_input) == True:
-        return True    
-            
+    with open("database.txt") as database:
+        database_csv = csv.reader(database, delimiter=',')
+        for line in database_csv:
+            if user_input.lower() == line[0].lower():
+                if password_input == line[1]:
+                    global acc
+                    acc = Account(user_input, password_input)
+                    return True
+        print("Username or password is incorrect.")
+        return False
 
 def signup_or_login():
     
-    print("a: Sign up")
-    print("b: Login")
+    print("(a) Sign up")
+    print("(b) Login")
     choice = input("What would you like to do?\n")
     while choice not in ['a', 'b']:
-        choice = input("Invalid option, pls try again: ")
+        choice = input("Invalid option, please try again: ")
     if choice == 'a':
         signup()
-        login()
-    elif choice == 'b' and acc.get_username() == '' and acc.get_password() == '':
+        print("Please login again.")
+        if login() == True:
+            while True:
+                main_menu(acc.get_balanceobj())
+        else:
+            signup_or_login()
+    elif choice == 'b':
+        if login() == True:
+            while True:
+                main_menu(acc.get_balanceobj())
+        else:
+            signup_or_login()
         
-#read write passwords from csv file
+
+signup_or_login()

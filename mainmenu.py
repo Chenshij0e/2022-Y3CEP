@@ -2,8 +2,6 @@ from blackjack import *
 from inventory import *
 from newgame import *
 
-player = Inventory(500)
-
 print("\n----------------------------------------------------------------")
 print("                ♠♣♥♦ WELCOME TO BLACKJACK! ♠♣♥♦")
 print("                          MAIN MENU")

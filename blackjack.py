@@ -1,9 +1,4 @@
-########################################################## Blackjack ###########################################################
-# -*- coding: utf-8 -*-
-# Submitted by : Sheetal Bongale
-# Python script simulates a simple command-line Blackjack game implemented using Python and Object Oriented Programming concepts
-# System Requirements: Python 3.8 (Python3)
-################################################################################################################################
+#GAMEPLAY IS NOT ORIGINAL BUT ACCOUNT AND BETTING SYSTEM IS
 
 import random
 import time
@@ -42,8 +37,7 @@ values = {
 
 playing = True
 
-# CLASS DEFINTIONS:
-
+#CLASS DEFINTIONS (CARDS):
 
 class Card:
     def __init__(self, suit, rank):
@@ -56,42 +50,42 @@ class Card:
 
 class Deck:
     def __init__(self):
-        self.deck = []  # start with an empty list
+        self.deck = []  #start with an empty list
         for suit in suits:
             for rank in ranks:
-                self.deck.append(Card(suit, rank))
+                self.deck.append(Card(suit, rank)) #creates a full deck of cards
 
     def __str__(self):
-        deck_comp = ""  # start with an empty string
+        deck_comp = ""  #start with an empty string
         for card in self.deck:
-            deck_comp += "\n " + card.__str__()  # add each Card object's print string
+            deck_comp += "\n " + card.__str__()  #add each Card object's print string
         return "The deck has:" + deck_comp
 
     def shuffle(self):
+        #shuffles the deck
         random.shuffle(self.deck)
 
     def deal(self):
+        #removes one card from the deck
         single_card = self.deck.pop()
         return single_card
 
 
 class Hand:
     def __init__(self):
-        self.cards = []  # start with an empty list as we did in the Deck class
-        self.value = 0  # start with zero value
-        self.aces = 0  # add an attribute to keep track of aces
+        self.cards = []  #start with an empty list as we did in the Deck class
+        self.value = 0  #start with zero value
+        self.aces = 0  #add an attribute to keep track of aces
 
     def add_card(self, card):
+        #draw one card from deck
         self.cards.append(card)
         self.value += values[card.rank]
         if card.rank == "A":
             self.aces += 1  # add to self.aces
 
     def adjust_for_ace(self):
+        #reduces the ace to a 1 if the sum of the hand is greater than 21
         while self.value > 21 and self.aces:
             self.value -= 10
             self.aces -= 1
-
-
-
-
